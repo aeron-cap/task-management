@@ -146,6 +146,7 @@ I would add browser-level tests, pagination and server-side filtering, an
 OpenAPI-generated client, audit timestamps, deployment configuration, and an
 authentication/authorization model. I would also run database integration tests
 against a disposable PostgreSQL instance. Added Filtering since I compensated it by leveraging the Search component to filter the list of projects, but it would be better to have a server-side filtering and pagination for better performance and scalability.
+I would have also deployed this in Railway, its just bad timing that my free trial just expired.
 
 ### Most challenging part
 
