@@ -1,0 +1,22 @@
+{
+  "name": "task-management",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web \"npm run start:dev --workspace=@task-management/api\" \"npm run dev --workspace=@task-management/web\"",
+    "build": "npm run build --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "test:e2e": "npm run test:e2e --workspace=@task-management/api",
+    "db:migrate": "npm run db:migrate --workspace=@task-management/api",
+    "db:seed": "npm run db:seed --workspace=@task-management/api",
+    "nest": "npm exec --workspace=@task-management/api -- nest"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.4"
+  }
+}

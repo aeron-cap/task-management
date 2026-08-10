@@ -1,0 +1,550 @@
+.app-shell {
+  min-height: 100vh;
+}
+
+.projects-page {
+  width: min(100% - 32px, 1120px);
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.page-intro,
+.register-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.page-intro {
+  margin-bottom: 24px;
+}
+
+.page-intro h1 {
+  font-size: 32px;
+  letter-spacing: -0.03em;
+}
+
+.button {
+  min-height: 40px;
+  padding: 0 16px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.button:hover:not(:disabled) {
+  background: var(--surface-muted);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.button-primary {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.button-primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.button-secondary,
+.button-quiet {
+  color: var(--text);
+}
+
+.register {
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.register-heading {
+  min-height: 72px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.register-heading h2,
+.form-panel-header h2 {
+  font-size: 20px;
+}
+
+.project-count {
+  color: var(--text-muted);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.project-count strong {
+  margin-right: 5px;
+  color: var(--text);
+}
+
+.notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 16px 20px 0;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.notice-error {
+  color: var(--danger);
+  background: var(--danger-muted);
+  border: 1px solid #fecaca;
+}
+
+.notice > span {
+  font-weight: 700;
+}
+
+.notice p {
+  flex: 1;
+}
+
+.notice-close {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.project-list-labels,
+.project-row {
+  display: grid;
+  grid-template-columns: minmax(280px, 2fr) 150px 220px 80px;
+  gap: 20px;
+  align-items: center;
+}
+
+.project-list-labels {
+  padding: 10px 20px;
+  color: var(--text-muted);
+  background: var(--surface-muted);
+  border-bottom: 1px solid var(--border);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.project-list ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.project-list li:not(:last-child) {
+  border-bottom: 1px solid var(--border);
+}
+
+.project-row {
+  min-height: 112px;
+  padding: 18px 20px;
+}
+
+.project-identity {
+  min-width: 0;
+  display: flex;
+  gap: 12px;
+}
+
+.project-number {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.client-name {
+  margin-bottom: 4px;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.project-identity h3 {
+  overflow: hidden;
+  font-size: 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.project-description {
+  display: -webkit-box;
+  margin-top: 6px;
+  overflow: hidden;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.4;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.project-standing {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.status,
+.priority {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.status {
+  gap: 7px;
+  font-weight: 600;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  background: currentColor;
+  border-radius: 50%;
+}
+
+.status-planning {
+  color: #64748b;
+}
+
+.status-in_progress {
+  color: #2563eb;
+}
+
+.status-on_hold {
+  color: #d97706;
+}
+
+.status-completed {
+  color: #16a34a;
+}
+
+.priority {
+  color: var(--text-muted);
+}
+
+.priority-high {
+  color: var(--danger);
+}
+
+.project-dates {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0;
+}
+
+.project-dates dt {
+  margin-bottom: 3px;
+  color: var(--text-muted);
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.project-dates dd {
+  margin: 0;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.date-line {
+  width: 16px;
+  height: 1px;
+  background: var(--border);
+}
+
+.project-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.icon-button {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  background: var(--surface);
+  cursor: pointer;
+}
+
+.icon-button:hover:not(:disabled) {
+  background: var(--surface-muted);
+}
+
+.icon-button-danger:hover:not(:disabled) {
+  color: var(--danger);
+  border-color: #fca5a5;
+}
+
+.icon-button:disabled {
+  cursor: wait;
+  opacity: 0.5;
+}
+
+.icon-button svg {
+  width: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+.loading-state,
+.error-state,
+.empty-state {
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 32px;
+  text-align: center;
+}
+
+.loading-state p,
+.error-state p,
+.empty-state p {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.error-state h3,
+.empty-state h3 {
+  margin-bottom: 6px;
+  font-size: 18px;
+}
+
+.error-state .button,
+.empty-state .button {
+  margin-top: 16px;
+}
+
+.state-monogram {
+  display: none;
+}
+
+.loader,
+.mini-loader {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 700ms linear infinite;
+}
+
+.mini-loader {
+  width: 14px;
+  height: 14px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.form-overlay {
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+  display: flex;
+  justify-content: flex-end;
+  background: rgba(15, 23, 42, 0.35);
+}
+
+.form-panel {
+  width: min(100%, 620px);
+  height: 100%;
+  overflow-y: auto;
+  background: var(--surface);
+  box-shadow: -8px 0 24px rgba(15, 23, 42, 0.12);
+}
+
+.form-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-kicker {
+  margin-bottom: 4px;
+  color: var(--text-muted);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.close-button {
+  font-size: 18px;
+}
+
+.project-form {
+  padding: 24px;
+}
+
+.form-notice {
+  margin: 0 0 20px;
+}
+
+.project-form fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.field-wide {
+  grid-column: 1 / -1;
+}
+
+.field label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.field label span {
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  background: var(--surface);
+}
+
+.field input,
+.field select {
+  height: 40px;
+  padding: 0 10px;
+}
+
+.field textarea {
+  min-height: 90px;
+  padding: 10px;
+  resize: vertical;
+}
+
+.field [aria-invalid="true"] {
+  border-color: var(--danger);
+}
+
+.field-error {
+  display: block;
+  margin-top: 5px;
+  color: var(--danger);
+  font-size: 12px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 20px;
+  margin-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 800px) {
+  .projects-page {
+    padding: 24px 0;
+  }
+
+  .page-intro h1 {
+    font-size: 28px;
+  }
+
+  .register-heading {
+    align-items: flex-start;
+  }
+
+  .register-heading > div {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .project-list-labels {
+    display: none;
+  }
+
+  .project-row {
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+  }
+
+  .project-identity,
+  .project-dates {
+    grid-column: 1 / -1;
+  }
+
+  .project-standing {
+    grid-column: 1;
+  }
+
+  .project-actions {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 560px) {
+  .page-intro {
+    align-items: flex-end;
+  }
+
+  .register-heading {
+    display: block;
+  }
+
+  .project-count {
+    display: block;
+    margin-top: 12px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .field-wide {
+    grid-column: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+  }
+}

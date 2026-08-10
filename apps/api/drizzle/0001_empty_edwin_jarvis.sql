@@ -1,0 +1,1 @@
+ALTER TABLE "projects" ADD CONSTRAINT "projects_valid_date_range" CHECK ("projects"."due_date" >= "projects"."start_date");
