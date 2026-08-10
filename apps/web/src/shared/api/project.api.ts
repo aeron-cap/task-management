@@ -9,6 +9,11 @@ type ApiErrorBody = {
   message?: string | string[];
 };
 
+const API_BASE_URL = (import.meta.env.VITE_API_URL ?? "/api").replace(
+  /\/$/,
+  "",
+);
+
 async function getErrorMessage(response: Response, fallback: string) {
   try {
     const body = (await response.json()) as ApiErrorBody;
@@ -28,7 +33,7 @@ async function requestJson<ResponseBody>(
   options: RequestInit,
   fallbackError: string,
 ) {
-  const response = await fetch(`/api${path}`, options);
+  const response = await fetch(`${API_BASE_URL}${path}`, options);
 
   if (!response.ok) {
     throw new Error(await getErrorMessage(response, fallbackError));
@@ -70,7 +75,9 @@ export function updateProject(id: string, project: UpdateProject) {
 }
 
 export async function deleteProject(id: string) {
-  const response = await fetch(`/api/projects/${id}`, { method: "DELETE" });
+  const response = await fetch(`${API_BASE_URL}/projects/${id}`, {
+    method: "DELETE",
+  });
 
   if (!response.ok) {
     throw new Error(
