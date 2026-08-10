@@ -103,6 +103,13 @@ not-found behavior in `ProjectsService`, and request validation in DTOs. The SPA
 uses one page-level component to own remote state while the form and list remain
 focused presentation components.
 
+## Features Implemented
+- All the Main requirements.
+- Dockerized Postgresql.
+- SPA mode for React frontend.
+- Search Functionality.
+- Some tests.
+
 ## Assumptions
 
 - This is a shared internal register, so authentication and project ownership
